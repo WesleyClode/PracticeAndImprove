@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react底层的核心库 -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <!-- React操作DOM的核心库,类似于jquery -->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <!-- 渲染三步走
+    1 创建容器(用于存放虚拟dom)
+    2 创建组件（虚拟dom元素）
+    3 组件挂载到容器里 -->
+    <div id="app"></div>
+    <div id="app1"></div>
+    <script>
+        var element = React.createElement('li',null,'篮球')// dom元素 属性 值
+        ReactDOM.render(element,document.getElementById('app'))
+    
+        // 多层嵌套
+        var li1 = React.createElement('li',null,'新一代篮球')
+        var li2 = React.createElement('li',{className:'listyle'},'李四')
+        var element1 = React.createElement('ul', {id:'list'}, li1, li2)
+        ReactDOM.render(element1,document.getElementById('app1'))
+    </script>
+</body>
+</html>

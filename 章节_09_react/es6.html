@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react底层的核心库 -->
+    <script src="./js//react.development.js"></script>
+    <!-- React操作DOM的核心库,类似于jquery -->
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>  
+</head>                  
+<body>
+    <!-- 渲染三步走
+    1 创建容器(用于存放虚拟dom)
+    2 创建组件（虚拟dom元素）
+    3 组件挂载到容器里 -->
+    <div id="app"></div>
+    <div id="app1"></div>
+    <!-- es6需引入babel,script要加type='text/babel'，把jsx转成React.createElement函数调用 -->
+    <script type='text/babel'>
+        let flag = false
+        let name = '李四2'
+       ReactDOM.render(
+           <ul id='list'>
+             <li>{flag ? '新一代篮球' : '新一代足球'}</li>
+             <li className="listyle">{name}</li>
+            </ul>
+       ,document.getElementById('app'))
+
+       let div=<ul id='list'>
+            <li>新一代篮球</li>
+            <li className="listyle">{name}</li>
+        </ul>
+        ReactDOM.render(flag?div:<div>hello world</div>,document.getElementById('app1'))
+    </script>
+</body>
+</html>

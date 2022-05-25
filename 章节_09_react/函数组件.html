@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react底层的核心库 -->
+    <script src="./js//react.development.js"></script>
+    <!-- React操作DOM的核心库,类似于jquery -->
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>  
+</head>                  
+<body>
+    <div id="app"></div>
+    <script type='text/babel'>
+        //通常情况（有hooks后就不一样了），函数组件只能props传传值，做做逻辑，无生命周期和state状态
+        function App(props){
+            return <div>
+                <h1>这是第一个函数式组件,是一个无状态组件</h1>
+                <p>姓名：{props.name}</p>
+                <p>年龄：18岁</p>
+                <p>擅长：前端开发</p>
+                <p>经验：10年</p>
+            </div>
+        }
+        let name = '李四2'
+        ReactDOM.render(<App name={name}/>,document.getElementById('app'))
+    </script>
+</body>
+</html>

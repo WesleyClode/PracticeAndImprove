@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- react底层的核心库 -->
+    <script src="./js//react.development.js"></script>
+    <!-- React操作DOM的核心库,类似于jquery -->
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>  
+</head>                  
+<body>
+    <div id="app"></div>
+    <script type='text/babel'>
+        //类组件里必须使用render方法进行渲染,是生命周期里面非常基础和底层的方法
+        class App extends React.Component{
+            // constructor可以不用写
+            // constructor(props){
+            //     // 写了构造函数就必须有super()，因为需要得到父类的this对象
+            //     // 构造函数里需要this.props,才需要super(props)
+            //     super(props)
+            //     this.props = props
+            //     console.log(props,this.props)
+            //     this.state = {
+            //         name:"张三"
+            //     }
+            // }
+            // state可以简写，写在构造函数外
+            state = {
+                name:'张三2',
+                year: 10,
+                skill: 10,
+                flag: true
+            }
+            //通常用这种
+            changeState=()=>{
+                // 调用setState的时候会重新执行render方法
+                this.setState({
+                    year: this.state.year + 1 
+                })
+            }
+            updateState=()=>{
+                // 调用setState的时候会重新执行render方法
+                this.setState({
+                    flag: !this.state.flag
+                })
+            }
+            changeSkill(){
+                // react没有vue那种proxy监听状态
+                // setState是继承自Component,调用setState的时候会重新执行render方法
+                this.setState({
+                    skill: this.state.skill + 1 
+                })
+            }
+            render(){
+                const {flag} = this.state
+                return <div>
+                {flag?<Have/>:<NoHave/>}
+                <button onClick={this.updateState}>更改状态</button>
+                <p>姓名：{this.props.name}{this.state.name}</p>
+                <p>年龄：18</p>
+                <p onClick={()=>this.changeSkill()}>技能：+{this.state.skill}</p>
+                <p onClick={this.changeState}>经验：{this.state.year}年</p>
+            </div>
+            }
+        }
+        class Have extends React.Component{
+            render(){
+                return <div>这是一个有状态组件</div>
+            }
+        } 
+        function NoHave(){
+            return <div>这是一个无状态组件</div>
+        }
+        let name = '李四2'
+        ReactDOM.render(<App name={name}/>,document.getElementById('app'))
+    </script>
+</body>
+</html>
