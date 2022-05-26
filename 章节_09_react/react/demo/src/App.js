@@ -2,7 +2,9 @@
 // import Context from './02context'
 // import EventBus from './03eventBus'
 // import Button from './04lifeCycle/button'
-import HOCComponent from './05HOCComponent'
+// import HOCComponent from './05HOCComponent'
+// import HookFile from './06Hooks'
+import ReduxComponent from './07Redux'
 
 function App() {
   return (
@@ -26,9 +28,18 @@ function App() {
         false ? <Button name='casey'/> : 'haha'
       } */}
 
-      <p>下面是高阶函数/高阶组件</p>
+      {/* <p>下面是高阶函数/高阶组件</p>
       <HOCComponent />
+      <hr/>  */}
+
+      {/* <p>下面是Hooks</p>
+      <HookFile />
+      <hr/>  */}
+
+      <p>下面是ReduxComponent</p>
+      <ReduxComponent />
       <hr/> 
+      
     </div>
   );
 }
