@@ -8,6 +8,7 @@ class store{
   }
 }
 //定义一个静态方法getInstance挂载在store类上,getInstance的值是这个类
+//因为return的是一个方法，所以要自执行一次
 store.getInstance = (function(){
   let instance
   return function(){
