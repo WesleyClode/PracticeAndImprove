@@ -9,6 +9,7 @@ const defaultRE = /\{\{((?:.|\r?\n)+?)\}\}/g
 export const util = {
     getValue(vm, expr){ // [school, name]
         let keys = expr.split(".");
+        // console.log(args,2222)
         return keys.reduce((memo, current)=>{ //迭代依次取出school.name.xxx
             memo = memo[current];
             return memo;
@@ -20,6 +21,7 @@ export const util = {
     },
     compilerText(node,vm){//编译文本 替换{{xxx}}
         node.textContent = node.textContent.replace(defaultRE, function(...args){
+            console.log(args,11111)
             return util.getValue(vm, args[1]);
         })
     }
