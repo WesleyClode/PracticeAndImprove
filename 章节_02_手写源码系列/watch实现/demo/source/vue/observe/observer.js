@@ -11,7 +11,7 @@ export function defineReactive(data, key, value) {
     Object.defineProperty(data, key, {
         get(){
             if (Dep.target) {// 这次有值用的是渲染watcher
-                debugger
+                // debugger
                 // 注意：希望存入的watcher不能重复，重复就会多次渲染
                 // dep.addSub(Dep.target)
                 // 更新：让dep中存watcher,同时让watcher也存入dep，多对多关系
