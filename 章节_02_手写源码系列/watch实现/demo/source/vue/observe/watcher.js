@@ -52,7 +52,7 @@ class Watcher{ // 每次产生一个watcher，都需要一个唯一标识
         if(!this.depsId.has(id)){
             this.depsId.add(id);
             this.deps.push(dep); //让watcher引用当前的dep
-            dep.addSub(this);
+            dep.addSub(this); //deep中引入watch
         }
     }
     update(){ //如果立即调用get会导致页面刷新 需要异步更新
