@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import VueRouter from './vue-router'  //使用三方插件
+import VueRouter from './vue-selfrouter1'  //使用三方插件
 import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)  //安装插件

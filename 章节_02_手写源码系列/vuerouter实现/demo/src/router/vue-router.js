@@ -25,6 +25,7 @@ class VueRouter {
         this.init();
     }
     init(){
+        // debugger
         //对页面模式监听
         if (this.mode === 'hash') {
             location.hash ? '' : location.hash = "/"; //默认值
@@ -95,7 +96,8 @@ VueRouter.install = function(Vue, opts){
             // console.log(this._self._root._router.mode)
             let mode = this._self._root._router.mode
             return <a href={mode === 'hash' ? `#${this.to}` : this.to}>
-                {this.$slots.default}
+                {/* <router-link>内容</router-link>，用插槽获取router-link里的内容 */}
+                {this.$slots.default} 
             </a>
         }
     })
@@ -104,7 +106,7 @@ VueRouter.install = function(Vue, opts){
             // return <h1>xxxxx</h1>
             // console.log(this._self._root._router)
             let current = this._self._root._router.history.current; //当前路由name
-            let _routesMap = this._self._root._router.routesMap; //路由实例
+            let _routesMap = this._self._root._router.routesMap; //路由实例里的路由表
             let curComp = _routesMap[current]; //当前路由name对应组件
             console.log(current, curComp)
             return h(curComp);
