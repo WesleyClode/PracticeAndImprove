@@ -8,7 +8,11 @@ class Watcher{ // 每次产生一个watcher，都需要一个唯一标识
      * 
      * @param {*} vm 当前组件的实例
      * @param {*} exprOrFn 表达式或函数
-     * @param {*} cb 传入的回调函数vm.$watch('msg', cb)
+     *            流程：先初始化走一遍new Watch(vm, expr)此次是为了每个属性都有对应的watcher，
+     *                 后mount()走一遍new Watch(vm, Fn)
+     *            expr: 场景为初始化，Observe数据观察时vm.$watch('msg', cb), expr为对象里的key, watch:{testKey:function(newV,oldV){}}
+     *            Fn: 场景为vm.$mount()时，渲染watcher, Fn函数里是vm._update()
+     * @param {*} cb 传入的回调函数vm.$watch('msg', cb) 上文，watch对象里testKey对应的值
      * @param {*} opts 其它参数
      */
     constructor(vm, exprOrFn, cb=()=>{}, opts={}) {

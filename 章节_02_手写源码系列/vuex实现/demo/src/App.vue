@@ -5,8 +5,8 @@
     <button @click="add">同步增加Num</button>
     <button @click="minus">同步减少Num</button>
     <button @click="asyncAdd">异步增加Num</button>
-    <button @click="syncItAdd">it同步增加</button>
-    <div>it-count: {{this.$store.state.it.count}}</div>
+    <!-- <button @click="syncItAdd">it同步增加</button>
+    <div>it-count: {{this.$store.state.it.count}}</div> -->
   </div>
 </template>
 

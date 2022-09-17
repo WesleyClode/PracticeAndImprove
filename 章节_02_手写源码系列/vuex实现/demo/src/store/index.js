@@ -1,6 +1,6 @@
 import Vue from 'vue'
 // import Vuex from 'vuex' //引用三方库
-import Vuex from './vuex'  //使用自定义vuex.js
+import Vuex from './selfvuex'  //使用自定义vuex.js
 
 Vue.use(Vuex)  //使用插件
 
