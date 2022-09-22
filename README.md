@@ -14,6 +14,12 @@
 ###
 * Vue源码手写系列
   - 数据拦截
+  - 文本渲染
+  - computed
+  - promise
+  - watch
+  - vuex
+  - vuerouter
 * canvas
 * 常用功能
   - 懒加载
