@@ -21,7 +21,9 @@
  泛型：定义的时候不指定类型，用的时候指定类型
  联合类型：arr3:Array<number|string> ，那么数组中任意位置可以是number可以是string
  函数检查类型
+ 类型断言
  定义类
+ 常用内置工具类型（基于接口，写法更方便）
 */
 
 // 定义变量
@@ -130,6 +132,17 @@ let fuc7 = (type: 'chart' | 'board', dataStr: string):number => {
 //第一个参数只能输入'chart' 或 'board'
 fuc7('board','1')
 
+// 类型断言
+/**
+ * 通常发生在你比TS更知道某个值的类型
+ * 尖括号写法
+ * let someValue:any = 'this is a string'；
+   let strLength:number = (<string>someValue).length；
+ * as写法
+   let someValue:any = 'this is a string'；
+   let strLength:number = (someValue as string).length；
+ */
+
 //定义类
 //修饰符  static  public  private
 // public 修饰的属性或方法是公有的，可以在任何地方被访问到，默认所有的属性和方法都是 public 的；
@@ -161,3 +174,125 @@ return x ; }
 }
 var a2 = new A2<number>(1);
 a2.add(3)
+
+// 常用内置工具类型
+/**
+ * Record<key type, value type> 
+ * 定义一个对象的 key 和 value 类型
+ *  export type EventType = 'hashchange' | 'popstate'
+    const capturedListeners: Record<EventType, Function[]> = {
+        hashchange: [],
+        popstate: [],
+    }
+    属性“hashxx”在类型“Record<EventType, Function[]>”上不存在。你是否指的是“hashchange”?
+    capturedListeners['hashxx'] = [function a(){},function b(){}]   //错 
+    capturedListeners['hashchange'] = [function a(){},function b(){}]  //对
+ */
+
+/**
+ * Partial
+ * 生成一个新类型，该类型与 T 拥有相同的属性，但是所有属性皆为可选项
+ * interface Foo {
+        name: string
+        age: number
+    }
+    type Bar = Partial<Foo>
+    相当于
+    type Bar = {
+        name?: string
+        age?: number
+    }
+ */
+
+
+/**
+ * Required
+ * 生成一个新类型，该类型与 T 拥有相同的属性，但是所有属性皆为必选项
+ * interface Foo {
+        name: string
+        age?: number
+    }
+    type Bar = Required<Foo>
+    相当于
+    type Bar = {
+        name: string
+        age: string
+    }
+ */
+
+/**
+ * Readonly
+ * 生成一个新类型，T 中的 K 属性是只读的，K 属性是不可修改的。
+ * interface Foo {
+        name: string
+        age: number
+    }
+    type Bar = Readonly<Foo>
+    相当于
+    type Bar = {
+        readonly name: string
+        readonly age: string
+    }
+ */
+
+/**
+ * Pick
+ * 生成一个新类型，该类型拥有 T 中的 K 属性集 ; 新类型 相当于 T 与 K 的交集
+ * 白话：借别人家的粮食吃
+ * interface Foo {
+        name: string;
+        age?: number;
+        gender: string;
+    }
+    type Bar = Pick<Foo, 'age' | 'gender'>
+    // 相当于
+    type Bar = {
+        age?: number
+        gender: string
+    }
+ */
+
+/**
+ * Omit
+ * 生成一个新类型，该类型拥有 T 中除了 K 属性以外的所有属性
+ * type Foo = {
+        name: string
+        age: number
+    }
+
+    type Bar = Omit<Foo, 'age'>
+    相当于
+    type Bar = {
+        name: string
+    }
+ */
+
+
+/**
+ * Exclude
+ * 如果 T 是 U 的子类型则返回 never 不是则返回 T
+ * type A = number | string | boolean
+   type B = number | boolean
+
+    type Foo = Exclude<A, B>
+    // 相当于
+    type Foo = string
+ */
+
+/**
+ * Extract
+ * 和 Exclude 相反
+ * type A = number | string | boolean
+   type B = number | boolean
+
+    type Foo = Extract<A, B>
+    // 相当于
+    type Foo = number | boolean
+ */
+
+/**
+ * NonNullable
+ * 从泛型 T 中排除掉 null 和 undefined
+ * type t = NonNullable<'name' | undefined | null>;
+   type t = 'name'
+ */

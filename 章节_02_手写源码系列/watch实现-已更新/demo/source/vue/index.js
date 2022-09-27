@@ -14,6 +14,8 @@ Vue.prototype._init = function (options) {
     vm.$options = options;
 
     //MVVM 重新初始化options中的属性，如data,methods
+    // vm.$options.watch存在，流程是初始化数据->数据劫持->数据观察+注册数据监听（里面Dep+wactcher依赖）->watcher接收vm.$options.watch->取$options里的data->走监听里的Dep+wactcher依赖
+    // vm.$options.watch不存在，流程是初始化数据->数据劫持->数据观察+注册数据监听（里面Dep+wactcher依赖）->vm.$mount()->watcher接收vm._update()->取$options里的data->走监听里的Dep+wactcher依赖
     initState(vm);
 
     if (vm.$options.el) {
