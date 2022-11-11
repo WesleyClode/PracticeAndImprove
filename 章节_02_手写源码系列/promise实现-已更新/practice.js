@@ -56,7 +56,7 @@ let p1 = p.then((data)=>{
     })
 })
 p1.then(data=>{
-  console.log(data)
+  console.log(111,data)
 })
 
 let n = 0
