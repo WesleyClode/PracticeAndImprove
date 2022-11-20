@@ -9,7 +9,14 @@
 
 移除上线前 debug 代码的 plugins
 
-## 使用方式
+## 本地vue cli项目中使用方式
+案例在仓库中的路径：PracticeAndImprove/章节_01_vueCli/
+常用的引入babel的方式
+* babel.config.js
+* .babelrc
+案例使用的是babel.config.js
+
+## 线上安装使用方式
 
 局部安装
 
