@@ -55,8 +55,8 @@ class Promise{
   then(onFulfilled, onRejected){
     let p = new Promise((resolve,reject)=>{
       if(this.status === SUCCESS){
-        let v = onFulfilled(this.value)
-        resolvePromise(v, resolve, reject) //处理then里的promise，最终走promise里的resolve，把resolve里的值存构造函数，下次then去取
+        let v = onFulfilled(this.value) // v是使用区then里return的promise
+        resolvePromise(v, resolve, reject) //处理使用区then里return的promise，promise.then得到使用区resolve的值，然后通过源码区的resolve把值存构造函数，下次then去取
       }
       if(this.status === FAILURE){
         onRejected(this.reason)
