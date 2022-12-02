@@ -1,0 +1,19 @@
+{
+  "name": "change-components-class",
+  "version": "1.0.0",
+  "description": "替换组件里的类名",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "cluo",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "@babel/types": "^7.20.5"
+  },
+  "dependencies": {
+    "chain-get": "^1.0.2"
+  }
+}
