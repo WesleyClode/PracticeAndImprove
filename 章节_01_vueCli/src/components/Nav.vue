@@ -85,7 +85,7 @@ export default {
     mounted(){
         // this.init()
         console.log(123124)
-        debugger
+        // debugger
     },
     methods: {
         init(){

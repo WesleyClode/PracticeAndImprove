@@ -5,11 +5,7 @@ module.exports = {
   ],
   plugins:[
     [
-      noDebuggerPlugin,
-      {
-        console:true,
-        debugger:true
-      }
+      noDebuggerPlugin
     ]
   ]
 }

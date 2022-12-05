@@ -3,11 +3,13 @@
         <h3>fathertoson</h3>
         <btn1 :action="action"></btn1>
         <div @click="getBtn2"><btn2 ref="btn2"></btn2></div>
+        <testClassChange/>
     </div>
 </template>
 <script>
 import btn1 from './btn1'
 import btn2 from './btn2'
+import testClassChange from '../testClassChange.vue'
 export default {
     name: 'Fathertoson',
     data(){
@@ -17,7 +19,8 @@ export default {
     },
     components:{
         btn1,
-        btn2
+        btn2,
+        testClassChange
     },
     methods: {
         action(e){
