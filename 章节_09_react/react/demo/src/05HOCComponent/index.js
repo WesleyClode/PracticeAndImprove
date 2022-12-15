@@ -27,6 +27,9 @@
 import React, { Component } from 'react'
 import Login from './login'
 import Logout from './logout'
+// import HocOne from './HocOne'
+// import HocTwo from './HocTwo'
+import HocThree from './HocThree'
 
 export class HOCComponent extends Component {
     render(){
@@ -36,6 +39,9 @@ export class HOCComponent extends Component {
                 <Login/>
                 {/* 此处的Logout组件其实是PropName高阶组件，传值也会传到PropName高阶组件里 */}
                 <Logout username='cscsc' age='213'/>
+                {/* <HocOne /> */}
+                {/* <HocTwo /> */}
+                <HocThree />
             </div>
         )
     }
