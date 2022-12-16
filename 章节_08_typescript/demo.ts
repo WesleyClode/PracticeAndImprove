@@ -132,6 +132,68 @@ let fuc7 = (type: 'chart' | 'board', dataStr: string):number => {
 //第一个参数只能输入'chart' 或 'board'
 fuc7('board','1')
 
+// 接口作为函数的返回值规范
+interface MyParams8 {
+    x: number;
+    y: number;
+}
+function fuc8(): MyParams8 {
+  return { x: 1, y: 2 }
+}
+fuc8();
+
+// 接口作为函数的入参规范
+interface MyParams9 {
+    x: number;
+    y: number;
+}
+function fuc9(params: MyParams9) {
+    return 111;
+}
+fuc9({
+    x: 1,
+    y: 2,
+});
+// 或
+// interface MyParams9 { // 定义 函数入参 + 返回类型
+//     (x: number, y: number): number
+// }
+// const fuc9:MyParams9 = (x=1, y =2) =>{
+//     return 111;
+// }
+// fuc9(1,2);
+
+// 函数+接口+泛型
+interface MyParams10 {
+    x: number;
+    y: number;
+}
+// 接口+泛型+函数入参
+function fuc10<T>(params:T) {
+    return params;
+}
+fuc10<MyParams10>({
+    x:1,
+    y:2
+});
+
+// 接口+泛型+函数返回值 待定
+interface MyParams11 {
+    x: number;
+    y: number
+}
+interface MyParams111 {
+    b: number
+}
+function fuc11<T, B>(params:T, BParams:B):B {
+    return BParams
+}
+fuc11<MyParams11, MyParams111>({
+    x:1,
+    y:2
+},{b:2});
+
+
 // 类型断言
 /**
  * 通常发生在你比TS更知道某个值的类型
