@@ -185,13 +185,24 @@ interface MyParams11 {
 interface MyParams111 {
     b: number
 }
-function fuc11<T, B>(params:T, BParams:B):B {
-    return BParams
+// 需要严格设置入参和函数返回值一样，如下写
+// 不需要设置入参和函数返回值一样，function xxx():T 不写就行
+function fuc11<T>(params:T):T {
+    return params
 }
-fuc11<MyParams11, MyParams111>({
+fuc11<MyParams11>({
     x:1,
     y:2
-},{b:2});
+});
+
+// 或者 混合泛型
+// function fuc11<T, B>(params:T, BParams:B):B {
+//     return BParams
+// }
+// fuc11<MyParams11, MyParams111>({
+//     x:1,
+//     y:2
+// },{b:2});
 
 
 // 类型断言
