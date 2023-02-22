@@ -9,7 +9,7 @@ export const createStore = function(reducer, initState) {
 
     function dispatch(action) {
         // 单向数据流，而不是双向绑定。
-        const newState = reducer(state, action);
+        const newState = reducer(state, action);// 触发combineReducers的闭包
         state = newState;
         listeners.forEach(fn => fn());
     }
@@ -28,7 +28,7 @@ export const createStore = function(reducer, initState) {
 
 export const combineReducers = function(reducers) {
     //{count: setCount, info: setInfo}
-    const keys = Object.keys(reducers); // count , info
+    const keys = Object.keys(reducers); // {count , info}
     return function(state = {}, action) {
         const nextState = {};
         // count -> num：1 、info -> age:18
