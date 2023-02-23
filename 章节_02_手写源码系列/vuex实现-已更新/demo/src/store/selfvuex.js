@@ -9,6 +9,7 @@ let install = function(_Vue){
     Vue.mixin({
         // mixin和beforeCreate是搭配使用，组件刚加载时走这里
         beforeCreate(){
+            // this 就是 '当前的' vue实例
             // 把$store 挂载到Vue实例
             if (this.$options && this.$options.store) { // 根组件
                 this.$store = this.$options.store
