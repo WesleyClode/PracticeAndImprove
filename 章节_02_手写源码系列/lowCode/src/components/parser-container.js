@@ -18,7 +18,7 @@ export default {
     const _propsOn = {
       nativeOn: {
         click: e => {
-          console.log(e)
+          console.log(e, '区域组件执行了...')
           _this.$emit('pickType', 'container')
         }
       },

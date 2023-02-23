@@ -112,6 +112,7 @@ export default {
       this.selectedType = item;
     },
     handlePickType(type) {
+      console.log(type)
       this.currentPickType = type;
     },
   },
