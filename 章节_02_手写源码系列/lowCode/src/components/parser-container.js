@@ -24,7 +24,10 @@ export default {
       },
       on: {
         dragover: _this.handleDragOver,
-        drop: _this.handleDrop
+        drop: _this.handleDrop,
+        toContainerSth(e){
+          console.log(e)
+        }
       }
     }
 
