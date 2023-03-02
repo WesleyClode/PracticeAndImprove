@@ -10,6 +10,9 @@ export default {
   render (h, section, children) {
     console.log(h, section, children)
     const _this = this
+    _this.$on('inpuChange',(v)=>{
+      console.log('表格组件配置器：',v)
+    })
     // 传递参数
     const _propsOn = {
       nativeOn: {

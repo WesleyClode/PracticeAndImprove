@@ -36,6 +36,7 @@ export default {
         testEvent(e){
           // 此处可正常打印cInput.vue文件给parser-input.js的数据
           console.log(e)
+          _this.$emit('inpuChange', e)
         }
       }
     }
