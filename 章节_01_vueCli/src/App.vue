@@ -65,6 +65,7 @@ export default {
 .right{
   text-align: left;
   padding-left: 50px;
+  flex: 1;
 }
 .flex{
   display: flex;

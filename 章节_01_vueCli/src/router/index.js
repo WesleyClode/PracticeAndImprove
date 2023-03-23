@@ -129,6 +129,14 @@ const routes = [
       title: 'vuex练习'
     },
     component: ()=> import('../components/vuex/index')
+  },
+  {
+    path: '/waterFull',
+    name: 'waterFull',
+    meta:{
+      title: '瀑布流练习'
+    },
+    component: ()=> import('../components/waterFull/index')
   }
 ]
 

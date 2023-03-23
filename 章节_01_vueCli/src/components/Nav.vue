@@ -75,6 +75,10 @@ export default {
                 {
                     name:'vuex练习',
                     path: '/vuex'
+                },
+                {
+                    name:'瀑布流练习',
+                    path: '/waterFull'
                 }
             ]
         }
