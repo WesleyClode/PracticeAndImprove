@@ -1,0 +1,60 @@
+<mxfile host="65bd71144e">
+    <diagram id="Z-F2iA-auXLYxMRUW47y" name="第 1 页">
+        <mxGraphModel dx="797" dy="629" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="传统型开发&lt;br&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="150" y="35" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="概念架构" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="142.5" y="70" width="95" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="产品逻辑" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="142.5" y="130" width="95" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="设计落地" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="142.5" y="190" width="95" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="技术架构" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="142.5" y="250" width="95" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="8">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="140" y="340" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="前端" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="90" y="310" width="95" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="后台" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="200" y="310" width="95" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="测试" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="142.5" y="370" width="95" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="上线" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="142.5" y="430" width="95" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="低代码开发" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry x="397.5" y="35" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="产品逻辑" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="130" width="95" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="通用配置" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="190" width="95" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="测试" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="370" width="95" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="上线" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="430" width="95" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="个性配置开发" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="390" y="310" width="95" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
