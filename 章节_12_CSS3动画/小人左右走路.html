@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css动画</title>
+</head>
+
+<body>
+
+    <div class="sprite right"></div>
+    <p>Press the right and left arrow keys to move the guy</p>
+    <style>
+        .sprite {
+            width: 102px;
+            height: 148px;
+            margin-top: 40px;
+        }
+
+        .right {
+            background-image: url(https://atomicrobotdesign.com/blog_media/css-sprite/standing-right.png);
+        }
+
+        .left {
+            background-image: url(https://atomicrobotdesign.com/blog_media/css-sprite/standing-left.png);
+        }
+
+        .walk-right {
+            background-image: url(https://atomicrobotdesign.com/blog_media/css-sprite/walk-right.png);
+            -webkit-animation: walk .9s steps(6) infinite;
+            -moz-animation: walk .9s steps(6) infinite;
+            -ms-animation: walk .9s steps(6) infinite;
+            -o-animation: walk .9s steps(6) infinite;
+            animation: walk .9s steps(6) infinite;
+        }
+
+        .walk-left {
+            background-image: url(https://atomicrobotdesign.com/blog_media/css-sprite/walk-left.png);
+            -webkit-animation: walk .9s steps(6) infinite;
+            -moz-animation: walk .9s steps(6) infinite;
+            -ms-animation: walk .9s steps(6) infinite;
+            -o-animation: walk .9s steps(6) infinite;
+            animation: walk .9s steps(6) infinite;
+        }
+
+        @-webkit-keyframes walk {
+            from {
+                background-position: 0px;
+            }
+
+            to {
+                background-position: -612px;
+            }
+        }
+
+        @-moz-keyframes walk {
+            from {
+                background-position: 0px;
+            }
+
+            to {
+                background-position: -612px;
+            }
+        }
+
+        @-ms-keyframes walk {
+            from {
+                background-position: 0px;
+            }
+
+            to {
+                background-position: -612px;
+            }
+        }
+
+        @-o-keyframes walk {
+            from {
+                background-position: 0px;
+            }
+
+            to {
+                background-position: -612px;
+            }
+        }
+
+        @-keyframes walk {
+            from {
+                background-position: 0px;
+            }
+
+            to {
+                background-position: -612px;
+            }
+        }
+    </style>
+    <script>
+        (function () {
+
+            var sprite = document.querySelector('.sprite'),
+                key = {
+                    left: false,
+                    right: false
+                },
+                trans = 0,
+                property = getTransformProperty(sprite);
+
+            function getTransformProperty(element) {
+                var properties = [
+                    'transform',
+                    'WebkitTransform',
+                    'msTransform',
+                    'MozTransform',
+                    'OTransform'
+                ];
+                var p;
+                while (p = properties.shift()) {
+                    if (typeof element.style[p] != 'undefined') {
+                        return p;
+                    }
+                }
+                return false;
+            }
+
+            function translate() {
+                sprite.style[property] = 'translateX(' + trans + 'px)';
+            }
+
+            function walk(e) {
+                var keyCode = e.keyCode;
+                if (keyCode === 39) {
+                    key.right = true;
+                } else if (keyCode === 37) {
+                    key.left = true;
+                }
+                if (key.right === true) {
+                    trans += 10;
+                    translate();
+                    sprite.classList.remove('left');
+                    sprite.classList.add('right');
+                    sprite.classList.add('walk-right');
+                } else if (key.left === true) {
+                    trans -= 10;
+                    translate();
+                    sprite.classList.remove('right');
+                    sprite.classList.add('left');
+                    sprite.classList.add('walk-left');
+                }
+            }
+
+            function stop(e) {
+                var keyCode = e.keyCode;
+                if (keyCode === 39) {
+                    key.right = false;
+                } else if (keyCode === 37) {
+                    key.left = false;
+                }
+                if (key.right === false) {
+                    sprite.classList.remove('walk-right');
+                }
+                if (key.left === false) {
+                    sprite.classList.remove('walk-left');
+                }
+            }
+
+            document.addEventListener('keydown', walk, false);
+            document.addEventListener('keyup', stop, false);
+
+        })();
+    </script>
+</body>
+
+</html>
